@@ -1,0 +1,20 @@
+name: Hello World
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: node-bookworm
+    
+    steps:
+    # - name: Checkout code
+    #   uses: actions/checkout@v4
+      
+    # - name: set up docker buildx
+    #   uses: docker/setup-buildx-action@v2
+
+    - name: test
+      run: docker buildx version
