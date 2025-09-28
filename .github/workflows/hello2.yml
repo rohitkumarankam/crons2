@@ -10,6 +10,8 @@ jobs:
     runs-on: node-bookworm
     
     steps:
+      - name: test
+        run: apt update && apt install -y docker.io
     # - name: Checkout code
     #   uses: actions/checkout@v4
       
