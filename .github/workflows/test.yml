@@ -1,0 +1,17 @@
+name: Hello World
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '* * * * *'  # Runs every minute
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: test
+      run: sleep 60; echo "Hello, world!"
