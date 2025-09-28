@@ -7,7 +7,7 @@ on:
 
 jobs:
   hello:
-    runs-on: docker
+    runs-on: node-bookworm
     
     steps:
       - name: install
