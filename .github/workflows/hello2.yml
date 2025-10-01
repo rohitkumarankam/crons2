@@ -11,7 +11,7 @@ jobs:
     
     steps:
     - name: install deps
-      run: apt update && apt install -y docker.io
+      run: sudo apt update && sudo apt install -y docker.io
     - name: Checkout code
       uses: actions/checkout@v4
       
