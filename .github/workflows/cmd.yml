@@ -1,0 +1,11 @@
+name: CMD
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    - name: docker version
+      run: docker buildx version
+    - name: os release
+      run: cat /etc/os-release
