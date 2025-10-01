@@ -7,7 +7,7 @@ on:
 
 jobs:
   hello:
-    runs-on: node-trixie
+    runs-on: ubuntu-latest
     
     steps:
     - name: install deps
