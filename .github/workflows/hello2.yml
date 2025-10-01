@@ -1,4 +1,4 @@
-name: Hello World
+name: Hello2
 
 on:
   push:
@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: install deps
-      run: sudo apt update && sudo apt install -y docker.io
+    # - name: install deps
+    #   run: sudo apt update && sudo apt install -y docker.io
     - name: Checkout code
       uses: actions/checkout@v4
       
