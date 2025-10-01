@@ -5,7 +5,9 @@ on:
 
 jobs:
   hello:
-    - name: docker version
-      run: docker buildx version
-    - name: os release
-      run: cat /etc/os-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: docker version
+        run: docker buildx version
+      - name: os release
+        run: cat /etc/os-release
