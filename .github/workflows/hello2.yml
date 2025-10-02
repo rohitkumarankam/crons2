@@ -35,4 +35,4 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: registry/app:latest
+        tags: git.rka.xyz/registry/app:latest
