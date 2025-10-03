@@ -7,7 +7,7 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - name: docker version
-        run: docker buildx version
-      - name: os release
-        run: cat /etc/os-release
+      - name: skopeo
+        uses: https://github.com/jetsung/install-skopeo@v1
+      - name: copy
+        run: skopeo copy docker://ghcr.io/catthehacker/ubuntu:runner-24.04 docker://git.rka.xyz/mirror/ubuntu:runner-24.04 --multi-arch all --dest-password ${{ secrets.DOCKER_PASSWORD }} --dest-username ${{ secrets.DOCKER_USERNAME }}
