@@ -7,7 +7,19 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - name: skopeo
-        uses: https://github.com/jetsung/install-skopeo@v1
-      - name: copy
+      - name: Install Skopeo
+        uses: jetsung/install-skopeo@v1
+
+      - name: Create policy.json
+        run: |
+          mkdir -p /home/runner/.config/containers
+          echo '{
+            "default": [
+              {
+                "type": "insecureAcceptAnything"
+              }
+            ]
+          }' > /home/runner/.config/containers/policy.json
+
+      - name: Copy image
         run: skopeo copy docker://ghcr.io/catthehacker/ubuntu:runner-24.04 docker://git.rka.xyz/mirror/ubuntu:runner-24.04 --multi-arch all --dest-password ${{ secrets.DOCKER_PASSWORD }} --dest-username ${{ secrets.DOCKER_USERNAME }}
