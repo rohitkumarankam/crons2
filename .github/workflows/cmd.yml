@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Skopeo
-        uses: jetsung/install-skopeo@v1
+        uses: https://github.com/jetsung/install-skopeo@v1
 
       - name: Create policy.json
         run: |
